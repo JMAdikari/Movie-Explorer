@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import MovieDetails from './Pages/Moviedetails';
 import Favorites from './Pages/Favorites';
-import SearchBar from './Components/Searchbar';
+import NavBar  from './Components/Navbar';  
 
 function App() {
   return (
     <Router>
-      <SearchBar />
+      <NavBar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<MovieDetails />} />
