@@ -10,7 +10,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="bg-gray-900 min-h-screen text-white px-4 py-6">
+    <div className="min-h-screen bg-gray-950 flex justify-center items-center p-6">
       <h2 className="text-3xl font-bold mb-6"> Trending Movies</h2>
       <MovieList movies={movies} />
     </div>

@@ -1,21 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MovieCard = ({ movie }) => (
-  <Link to={`/movie/${movie.id}`} className="w-48 ml-4"> {/* Added left margin */}
-    <div className="bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-300 border border-gray-600">
-      <img
-        src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-        alt={movie.title}
-        className="w-full h-72 object-cover"
-      />
-      <div className="p-3 text-white">
-        <h4 className="text-lg font-bold truncate text-white">{movie.title}</h4>
-        <p className="text-sm text-gray-400">{movie.release_date}</p>
-        <p className="text-sm text-yellow-400">⭐ {movie.vote_average}</p>
+const MovieCard = ({ movie }) => {
+  return (
+    <Link
+      to={`/movie/${movie.id}`}
+      className="w-64 border-2 border-yellow-400 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-transform duration-300 transform hover:scale-105 bg-gray-900"
+    >
+      <div className="bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-gray-700 outline outline-1 outline-gray-600 hover:outline-yellow-400">
+        <img
+          src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+          alt={movie.title}
+          className="w-full h-80 object-cover"
+        />
+        <div className="p-4 text-white">
+          <h4 className="text-base font-semibold truncate">{movie.title}</h4>
+          <p className="text-sm text-gray-400 mt-1">{movie.release_date}</p>
+          <p className="text-sm text-yellow-400 mt-1">⭐ {movie.vote_average}</p>
+        </div>
       </div>
-    </div>
-  </Link>
-);
+    </Link>
+  );
+};
 
 export default MovieCard;
