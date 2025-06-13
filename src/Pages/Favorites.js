@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Grid, Card, CardMedia, CardContent, Typography, IconButton, Box, useTheme } from '@mui/material';
+import { Container, Grid, Card, CardMedia, CardContent, Typography, IconButton, useTheme } from '@mui/material';
 import { Star, Delete } from '@mui/icons-material';
 
 const Favorites = () => {
@@ -21,6 +21,7 @@ const Favorites = () => {
     <Container
       sx={{
         py: 4,
+        mt: 3, // Added 32px top margin for extra space
         color: theme.palette.text.primary,
         minHeight: '100vh',
         bgcolor: theme.palette.background.default,
@@ -39,17 +40,19 @@ const Favorites = () => {
             <Grid item xs={6} sm={4} md={3} key={movie.id}>
               <Card
                 sx={{
+                  width: { xs: '100%', sm: 250 }, // Fixed width for consistency with MovieCard.js
                   bgcolor: theme.palette.background.paper,
                   borderRadius: 2,
                   boxShadow: theme.shadows[4],
-                  transition: 'transform 0.3s, box-shadow 0.3s',
+                  transition: 'transform 0.3s, box-shadow: 0.3s',
                   '&:hover': {
                     transform: 'scale(1.05)',
                     boxShadow: 6,
                   },
-                  height: '100%', // Ensure cards are same height
+                  height: '100%', // Ensure uniform height
                   display: 'flex',
                   flexDirection: 'column',
+                  position: 'relative', // For absolute positioning of IconButton
                 }}
                 role="article"
                 aria-label={`Favorite movie: ${movie.title}`}
@@ -65,7 +68,7 @@ const Favorites = () => {
                     }}
                     image={
                       movie.poster_path
-                        ? `https://image.tmdb.org/t/p/w300${movie.poster_path}` // Match MovieDetails w300
+                        ? `https://image.tmdb.org/t/p/w300${movie.poster_path}`
                         : 'https://via.placeholder.com/300x450?text=No+Poster'
                     }
                     alt={movie.title || 'Movie poster'}
