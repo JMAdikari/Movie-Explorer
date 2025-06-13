@@ -44,6 +44,7 @@ const MovieDetails = () => {
     <Container
       sx={{
         py: 4,
+        mt: 3, // Added 32px top margin for extra space
         color: theme.palette.text.primary,
         minHeight: '100vh',
         bgcolor: theme.palette.background.default,

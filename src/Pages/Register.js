@@ -32,6 +32,7 @@ const Register = () => {
     <Container
       sx={{
         py: 4,
+        mt: 3, // Added 32px top margin for extra space
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
