@@ -6,6 +6,8 @@ import Favorites from './Pages/Favorites';
 import NavBar  from './Components/Navbar';  
 import Login from './Pages/Login';
 import Register from './Pages/Register';
+import Searchbar from './Components/Searchbar';
+import SearchResults from './Components/Searchresult';
 
 function App() {
   return (
@@ -15,9 +17,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<MovieDetails />} />
+        <Route path="/search/:query" element={<SearchResults/>} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        
       </Routes>
     </Router>
   );
